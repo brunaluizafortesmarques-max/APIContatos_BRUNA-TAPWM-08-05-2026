@@ -17,24 +17,3 @@ conectarBanco();
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}`));
 
-const mongoose = require('mongoose');
-
-const usuarioSchema = new mongoose.Schema({
-  nome: {
-    type: String,
-    required: true
-  },
-  email: {
-    type: String,
-    required: true,
-    unique: true
-  },
-  idade: {
-    type: Number,
-    min: 0
-  },
-  criadoEm: {
-    type: Date,
-    default: Date.now
-  }
-});
